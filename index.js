@@ -33,6 +33,7 @@ const axios = require('axios');
           title: page.title,
           url: page.html_url,
           description: `[View Changes](${page.html_url}/_compare/${page.sha})`,
+          fields: [],
           footer: {
             text: `Page ${page.action} by ${github.context.payload.sender.login}.`
           }
@@ -56,4 +57,3 @@ const axios = require('axios');
     core.setFailed(error.message);
   }
 })();
-
